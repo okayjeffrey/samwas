@@ -2,6 +2,63 @@
  * Base Styles
  */
 
+ // Our variables
+ $base-font-family: Helvetica, Arial, sans-serif;
+ $base-font-size:   16px;
+ $small-font-size:  $base-font-size * 0.875;
+ $base-line-height: 1.5;
+
+ $spacing-unit:     30px;
+
+ $text-color:       #111;
+ $background-color: #fdfdfd;
+ $brand-color:      #2a7ae2;
+
+ $grey-color:       #828282;
+ $grey-color-light: lighten($grey-color, 40%);
+ $grey-color-dark:  darken($grey-color, 25%);
+
+ $red: #A9030C;
+
+ // Width of the content area
+ $content-width:    800px;
+
+ $on-palm:          600px;
+ $on-laptop:        800px;
+
+
+ /* Mixins */
+
+ @mixin border-radius($size) {
+   -webkit-border-radius: $size;
+   -moz-border-radius: $size;
+   border-radius: $size;
+ }
+
+ @mixin vw($size) {
+   .vw#{$size} { height:#{$size}vw; width:#{$size}vw; }
+ }
+
+ @mixin cross($property, $css) {
+     -webkit-#{$property} : $css;
+     -moz-#{$property} : $css;
+     -o-#{$property} : $css;
+     -khtml-#{$property} : $css;
+     #{$property} : $css;
+ }
+ // Using media queries with like this:
+ // @include media-query($on-palm) {
+ //     .wrapper {
+ //         padding-right: $spacing-unit / 2;
+ //         padding-left: $spacing-unit / 2;
+ //     }
+ // }
+ @mixin media-query($device) {
+     @media screen and (max-width: $device) {
+         @content;
+     }
+ }
+
 
 @include vw(20);
 @include vw(50);
@@ -13,8 +70,49 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
+a, a:link, a:hover {
+  text-decoration: none;
+}
+
 .border-2 { border-width:2px; }
 .border-3 { border-width:3px; }
 .border-4 { border-width:4px; }
 .border-5 { border-width:5px; }
 .border-6 { border-width:6px; }
+
+.sale-item {
+
+  display: block;
+  position: relative;
+
+  &::after{
+    @include cross(transition, opacity .3s ease-in);
+    content:'buy me';
+    display: block;
+    position: absolute;
+    top: 40%;
+    left:50%;
+    transform: translateX(-50%);
+    padding: 1em 3em;
+    color:$brand-color;
+    background-color: $grey-color-light;
+    text-align: center;
+    @include cross(border-radius, 4px);
+    background-color: $red;
+    color: #fff;
+    opacity: 0;
+  }
+
+  &:hover::after {
+    opacity:1.0;
+  }
+
+
+  img {
+    @include cross(transition, opacity .3s ease-out);
+    opacity: 1;
+  }
+  &:hover img{
+    opacity: 0.5;
+  }
+}
