@@ -1,18 +1,55 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class="flex flex-justify flex-wrap py4 px4">
-
-    <div class="mx-auto vw20 circle bg-yellow bg-cover bg-center" style="background-image: url(http://res.cloudinary.com/okayjeffrey/image/upload/c_thumb,dpr_2.0,g_faces:center,h_150,w_150,z_3/v1431320081/mock-11_vxkzih.jpg);"></div>
-
-    <div class="mx-auto vw20 circle bg-yellow bg-cover bg-center" style="background-image: url(http://res.cloudinary.com/okayjeffrey/image/upload/c_thumb,dpr_2.0,g_face:center,h_150,w_150,z_3/v1431320092/mock-59_bray4y.jpg);"></div>
-
+<div class="posts">
+  {% for post in paginator.posts %}
+  <article class="post{% if post.category != null %} {{ post.category }}{% endif %}">
+    <div class="copy">
+        {% if post.title != null %}
+        <h2 class="post-title">
+            <a href="{{ site.baseurl }}{{ post.url }}">
+                {{ post.title }}
+            </a>
+        </h2>
+        {% endif %}
+        <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
+            &mdash;
+            <cite>{{ post.author }}</cite>
+        </div>
+        {% if post.tags %}
+        <small class="post-tags">
+            {% for tag in post.tags %}
+                <a href="#{{ tag }}" class="tag">{{ tag }}</a>
+            {% endfor %}
+        </small>
+        {% endif %}
+        {{ post.content }}
+    </div>
+    <div class="media">
+        <ul class="no-style">
+        {% for image in post.images %}
+            <li>
+                <img src="{{ image }}" data-src="{{ image }}" title="{{ image }}" />
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+  </article>
+  {% endfor %}
 </div>
 
-<div class="col-8 px2 mx-auto">
-  <a class="sale-item" href="https://squareup.com/market/samwas/gettin-hot?utm_source=samwas&utm_medium=embed&utm_campaign=menu_v2" target="_blank">
-    <img src="http://res.cloudinary.com/okayjeffrey/image/upload/v1432017279/samwas/sriacha.jpg" alt="" />
-    <button type="button" class="button button-big mb1 bg-red block mx-auto">Get them while they're hot!</button>
-  </a>
-</div>
+<!-- <div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div> -->

@@ -1,0 +1,146 @@
+// Posts and pages
+//
+// Each post is wrapped in `.post` and is used on default and post layouts. Each
+// page is wrapped in `.page` and is only used on the page layout.
+
+.page,
+.post {
+  margin-bottom: 4em;
+}
+
+// Blog post or page title
+.page-title,
+.post-title,
+.post-title a {
+  color: $key-color;
+}
+.page-title,
+.post-title {
+  margin-top: 0;
+}
+
+// Meta data line below post title
+.post-date {
+  display: block;
+  margin-right: .5rem
+/*   margin-top: -.5rem;
+margin-bottom: 1rem; */
+}
+
+cite {
+    margin-left: .5rem
+}
+
+.post-tags {
+    color: $accent-color;
+    .tag {
+        padding-right: .75em;
+        position: relative;
+        &::after {
+            color: lighten($key-color, 60%);
+            content: '•';
+            background-color: lighten($accent-color, 55%);
+            text-decoration: none !important;
+            position: absolute;
+            bottom: 0;
+            padding-left: .125em;
+        }
+        &:last-child::after {
+            content: '';
+            padding-left: 0;
+        }
+    }
+}
+
+
+// Related posts
+.related {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid lighten($accent-color, 48%);
+}
+
+.related-posts {
+  padding-left: 0;
+  list-style: none;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  li {
+    small {
+      font-size: 75%;
+    }
+
+    a:hover {
+      color: $callout-color;
+      text-decoration: none;
+
+      small {
+        color: inherit;
+      }
+    }
+  }
+}
+
+// -------------- Life, Work, Inspire Post types
+.post, .post.life {
+    @include transition(margin 0.3s ease-out);
+    @include flex;
+    @include flex-wrap(wrap);
+    .copy {
+        padding-top: 1rem;
+        border-top: solid 1px $accent-color;
+        max-width: $column-width * 5;
+
+        .post-meta {
+            @include flex;
+            margin-top: -.3rem;
+            font-size: 1rem;
+            color: $accent-color;
+        }
+    }
+
+    @include breakpoint(medium){
+        @include flex-wrap(nowrap);
+        .copy {
+            margin-right: $column-width / 2;
+            max-width: $column-width * 3;
+        }
+        .media {
+            max-width: $column-width * 8;
+        }
+    }
+
+    @include breakpoint(max){
+        margin-left: $column-width * 2;
+    }
+
+}
+
+.post.work {
+    @include flex-wrap(wrap-reverse);
+    .copy {
+        margin-left: $column-width * .2;
+        border: 0;
+        max-width: $column-width * 5;
+    }
+    .media {
+        max-width: $column-width * 12;
+        border-top: solid 1px $accent-color;
+        padding-top: 1rem;
+    }
+    @include breakpoint(max){
+        margin-left: $column-width * 1.8;
+    }
+}
+
+.post.inspire {
+    .copy {
+
+    }
+    .media {
+
+    }
+}

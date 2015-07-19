@@ -1,0 +1,57 @@
+// Masthead
+//
+// Super small header above the content for site name and short description.
+
+.masthead {
+    @include flex;
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    padding-top:    2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+
+    // background-color: $callout-color;
+    // & * {color: white !important;}
+
+    @include breakpoint(medium){
+      @include flex-wrap(nowrap);
+    }
+}
+
+.masthead-title {
+    width: $column-width * 2;
+    margin-top: 0;
+    margin-bottom: 0;
+  a {
+      text-decoration: underline;
+      font-weight: 600;
+      letter-spacing: .05ex;
+  }
+
+  small {
+    font-size: 75%;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+
+nav {
+    width: $column-width * 10;
+    ul {
+        @include flex;
+        li {
+            padding-left: 1rem;
+            &:first-child { padding:0; }
+            &::after {
+                content: '&';
+                padding-left: 1rem;
+                color: $accent-color;
+            }
+            &:last-child:after { content: ''; padding:0; }
+        }
+        @include breakpoint(medium){
+            margin:0 0.5rem;
+            @include justify-content(flex-end);
+        }
+    }
+}
