@@ -55,3 +55,18 @@ nav {
         }
     }
 }
+
+// ------------------------ FOOTER
+
+footer.footer {
+    border-top: solid 1px $accent-color;
+    padding: 1rem 0;
+
+    small {
+        max-width: $max-width;
+        padding-left:  $column-width * 2;
+        margin-left:  auto;
+        margin-right: auto;
+        display: block;
+    }
+}

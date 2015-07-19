@@ -23,8 +23,8 @@ html {
 
 body {
   color: $key-color;
-  background-color: lighten($accent-color, 55%);
-  border-top: solid .125rem $callout-color;
+  background-color: $background-color;
+  border-top: solid 8px $power-color;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }

@@ -11,7 +11,7 @@ tags:
     - identity
 images:
     - https://lh3.googleusercontent.com/27rNfydfwul6zKUW8QltxM5oUfizXA9nEmaeOZY5Rr13=w1643-h1227-no
-    - https://lh3.googleusercontent.com/N7qJtDXx3UHVjFGa49GKgp87gHvoAU6rMHsIYw0p9r8p=w921-h1227-no
+    - https://lh3.googleusercontent.com/5FRpJysc2F_0h_7xGLMKU2KXSHgPq7DUwEZ2fraQx1ef=w675-h1038-no
     - https://lh3.googleusercontent.com/tlcZnCwJ9_2TKPSI6iSBaXL4DcoOUA7Ubuc1w5VEg5XX=w1636-h1227-no
     - https://lh3.googleusercontent.com/XBLYiyPQci3nPVPBDAzDjHkgcm3fWZb98eOgw6l1c9s=w1755-h1170-no
 ---

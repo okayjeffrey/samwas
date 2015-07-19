@@ -39,7 +39,7 @@ cite {
         &::after {
             color: lighten($key-color, 60%);
             content: '•';
-            background-color: lighten($accent-color, 55%);
+            background-color: $background-color;
             text-decoration: none !important;
             position: absolute;
             bottom: 0;
