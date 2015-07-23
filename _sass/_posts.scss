@@ -5,7 +5,7 @@
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 12vh;
 }
 
 // Blog post or page title
@@ -54,7 +54,7 @@ cite {
 
 
 // Related posts
-.related {
+/* .related {
   padding-top: 2rem;
   padding-bottom: 2rem;
   border-top: 1px solid lighten($accent-color, 48%);
@@ -82,7 +82,7 @@ cite {
       }
     }
   }
-}
+} */
 
 // -------------- Life, Work, Inspire Post types
 .post, .post.life {
@@ -109,6 +109,12 @@ cite {
             max-width: $column-width * 3;
         }
         .media {
+            max-width: $column-width * 5;
+        }
+    }
+
+    @include breakpoint(large){
+        .media {
             max-width: $column-width * 8;
         }
     }
@@ -122,14 +128,21 @@ cite {
 .post.work {
     @include flex-wrap(wrap-reverse);
     .copy {
-        margin-left: $column-width * .2;
         border: 0;
         max-width: $column-width * 5;
     }
     .media {
-        max-width: $column-width * 12;
+        width: $column-width * 12;
         border-top: solid 1px $accent-color;
-        padding-top: 1rem;
+        padding-top: 1.5rem;
+    }
+    @include breakpoint(medium){
+        .copy {
+            margin-left: $column-width * .2;
+        }
+        .media {
+            max-width: $column-width * 12;
+        }
     }
     @include breakpoint(max){
         margin-left: $column-width * 1.8;

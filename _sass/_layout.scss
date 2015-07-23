@@ -9,8 +9,8 @@
   margin-left:  auto;
   margin-right: auto;
 
-  @include breakpoint(medium){
-      padding-left:  $column-width / 4;
+  @include breakpoint(max){
+      padding-left: $column-width / 4;
       padding-right: 0;
   };
 }
@@ -28,5 +28,19 @@
 .col-11 { max-width: $column-width * 11; }
 .col-12 { max-width: $column-width * 12; }
 
-footer {
+// ------------------------ FOOTER
+
+footer.footer {
+    border-top: solid 1px $accent-color;
+    padding: 1.5rem 0;
+    text-align: center;
+
+    small {
+        max-width: $max-width;
+        display: block;
+    }
+    @include breakpoint(medium){
+        padding-left:  $column-width / 2;
+        padding-right: 0;
+    };
 }

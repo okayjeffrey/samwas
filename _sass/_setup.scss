@@ -1,14 +1,11 @@
 // COLOR SETUP
-$key-color: #2a2f66;
-$accent-color: #a4895e; // a4895e 8c9080
-$callout-color: #df343d;
-$power-color: #2a2f66;
-
-$bg: #ffedd3;
-$background-color: lighten($bg, 5%);
+$key-color: #000; // Body Copy
+$accent-color: #999; // Meta Data & Subtle Accents
+$callout-color: #0092B2; // Links
+$power-color: #FFCA3D; // Top Bar
+$background-color: #F8F8F8; // Background FFFFF7
 
 // TYPE SETUP
-
 $typeface: franklin-gothic-urw;
 $base-font-size: 1.125rem; // 18px
 $base-line-height: 1.5rem; // 24
@@ -65,6 +62,10 @@ $small-break: 38rem; // 608
     }
 }
 
+// RANDOs
+
+$burger-height: 1.25rem;
+
 // MIXINS
 
 // --- Animation
@@ -73,6 +74,12 @@ $small-break: 38rem; // 608
     -moz-transition: $value;
     -o-transition: $value;
     transition: $value;
+}
+
+// -- layout
+@mixin transform($value) {
+    transform: $value;
+    -webkit-transform: $value;
 }
 
 // --- Flex Box
@@ -114,4 +121,98 @@ $small-break: 38rem; // 608
 @mixin order($value) {
     order: $value;
     -webkit-order: $value;
+}
+
+// ---- animation
+
+@mixin animation($value) {
+    animation: $value;
+    -webkit-animation: $value;
+}
+
+@mixin animation-name($value) {
+    animation-name: $value;
+    -webkit-animation-name: $value;
+}
+
+@mixin animation-duration($value) {
+    animation-duration: $value;
+    -webkit-animation-duration: $value;
+}
+
+@mixin animation-iteration-count($value) {
+    animation-iteration-count: $value;
+    -webkit-animation-iteration-count: $value;
+}
+
+@mixin animation-direction($value) {
+    animation-direction: $value;
+    -webkit-animation-direction: $value;
+}
+
+@mixin animation-timing-function($value) {
+    animation-timing-function: $value;
+    -webkit-animation-timing-function: $value;
+}
+
+@mixin animation-fill-mode($value) {
+    animation-fill-mode: $value;
+    -webkit-animation-fill-mode: $value;
+}
+
+@mixin animation-delay($value) {
+    animation-delay: $value;
+    -webkit-animation-delay: $value;
+}
+
+@mixin animation-play-state($value) {
+    animation-play-state: $value;
+    -webkit-animation-play-state: $value;
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+}
+
+// ANIMATIONS!!!!!!!!!!!!!!!!
+
+// -- Hamburger animation
+@include keyframes(topLineCross) {
+  0% { @include transform(translateY(-($burger-height / 2))); }
+  50% { @include transform(translateY(0px)); }
+  100% { @include transform(translateY(0px) rotate(45deg)); }
+}
+
+@include keyframes(bottomLineCross) {
+  0% { @include transform(translateY($burger-height / 2)); }
+  50% { @include transform(translateY(0px)); }
+  100% { @include transform(translateY(0px) rotate(-45deg)); }
+}
+
+@include keyframes(topLineBurger) {
+  0% { @include transform(translateY(0px) rotate(45deg)); }
+  50% { @include transform(rotate(0deg)); }
+  100% { @include transform(translateY(-($burger-height / 2)) rotate(0deg)); }
+}
+
+@include keyframes(bottomLineBurger) {
+  0% { @include transform(translateY(0px) rotate(-45deg)); }
+  50% { @include transform(rotate(0deg)); }
+  100% { @include transform(translateY($burger-height / 2) rotate(0deg)); }
+}
+
+// -- About hide & show
+@include keyframes(aboutShow) {
+  0% { max-height: 2px; }
+  100% { max-height: 2000px; }
+}
+
+@include keyframes(aboutHide) {
+  0% { max-height: 2000px; }
+  100% { max-height: 2px; }
 }
