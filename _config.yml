@@ -14,7 +14,7 @@ redcarpet:
 title:               SAMWAS
 tagline:             On the Line
 url:                 http://samwas.com
-paginate:            100
+paginate:            5
 baseurl:             ""
 host: 0.0.0.0
 

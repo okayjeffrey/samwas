@@ -2,7 +2,7 @@
 layout: post
 title: Stephen Cardinale
 author: Jeffrey
-category: work
+category: inspire
 tags:
     - work
     - friend

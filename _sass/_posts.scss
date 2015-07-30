@@ -20,25 +20,27 @@
 }
 
 // Meta data line below post title
-.post-date {
+.post-date, .post-author, .post-notes {
   display: block;
-  margin-right: .5rem
-/*   margin-top: -.5rem;
-margin-bottom: 1rem; */
+  margin:0 .25rem;
 }
 
 cite {
-    margin-left: .5rem
+    margin-left: .5rem;
+    font-size: $h3-font-size;
+    line-height: 1;
 }
 
 .post-tags {
     color: $accent-color;
+    margin:0 .25rem;
     .tag {
         padding-right: .75em;
         position: relative;
         &::after {
             color: lighten($key-color, 60%);
             content: '•';
+            line-height: 1;
             background-color: $background-color;
             text-decoration: none !important;
             position: absolute;
@@ -52,53 +54,33 @@ cite {
     }
 }
 
-
-// Related posts
-/* .related {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-top: 1px solid lighten($accent-color, 48%);
-}
-
-.related-posts {
-  padding-left: 0;
-  list-style: none;
-
-  h3 {
-    margin-top: 0;
-  }
-
-  li {
-    small {
-      font-size: 75%;
-    }
-
-    a:hover {
-      color: $callout-color;
-      text-decoration: none;
-
-      small {
-        color: inherit;
-      }
-    }
-  }
-} */
-
 // -------------- Life, Work, Inspire Post types
 .post, .post.life {
     @include transition(margin 0.3s ease-out);
     @include flex;
     @include flex-wrap(wrap);
     .copy {
-        padding-top: 1rem;
-        border-top: solid 1px $accent-color;
+        padding-top: 2rem;
+        border-top: solid 1px lighten($accent-color, 20%);
         max-width: $column-width * 5;
 
         .post-meta {
             @include flex;
+            @include flex-wrap(wrap);
             margin-top: -.3rem;
-            font-size: 1rem;
             color: $accent-color;
+        }
+
+        .post-tags, .post-meta {
+            font-size: 1rem;
+            line-height: 1;
+        }
+        .notes {
+            border-top: solid 1px lighten($accent-color, 20%);
+            padding-top: 1rem;
+            img {
+                width: auto;
+            }
         }
     }
 
@@ -125,7 +107,7 @@ cite {
 
 }
 
-.post.work {
+.post.inspire, .post.photo {
     @include flex-wrap(wrap-reverse);
     .copy {
         border: 0;
@@ -133,27 +115,76 @@ cite {
     }
     .media {
         width: $column-width * 12;
-        border-top: solid 1px $accent-color;
+        border-top: solid 1px lighten($accent-color, 20%);
         padding-top: 1.5rem;
     }
     @include breakpoint(medium){
         .copy {
-            margin-left: $column-width * .2;
+            margin-left: $column-width * .1;
         }
         .media {
             max-width: $column-width * 12;
         }
     }
     @include breakpoint(max){
-        margin-left: $column-width * 1.8;
+        /* margin-left: $column-width * 1.8; */
     }
 }
 
-.post.inspire {
+.post.text, .post.chat {
     .copy {
-
+        max-width: $column-width * 5;
     }
-    .media {
+}
 
+ol.chat {
+    li {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        &:nth-child(odd) {
+            font-weight: 500;
+            list-style-type: none;
+            list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJElEQVQYV2NkYGD4z0AEYByxCvEFDjzoQMFDCIAVE6MQpO4/AEmaCgGnoE2BAAAAAElFTkSuQmCC');
+        }
+        &:nth-child(even) {
+            list-style-type: none;
+            /* list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAALklEQVQYV2NkYGD4z0AEYIQqBNH4wP+hpBCfR8D+IOhbmAmEFILUgcOZGIVgxQCZiRABelGxuwAAAABJRU5ErkJggg=='); */
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.post.chat {
+    @extend ol.chat;
+}
+
+.post.link, .post.quote {
+    .copy {
+        padding-top: 1rem;
+        max-width: $column-width * 7;
+        @include flex;
+        @include flex-direction(column-reverse);
+
+        .copy-content {
+            font-size: $h2-font-size;
+            line-height: $h2-line-height;
+            padding-top: 1rem;
+            padding-bottom: 1.5rem;
+            blockquote {
+                color: $key-color;
+            }
+            p {
+                margin:1rem 0;
+            }
+        }
+    }
+}
+
+.post.photoset {
+    iframe.photoset {
+        max-width:100%;
     }
 }

@@ -1,0 +1,29 @@
+{block:Photoset inlineMediaWidth="250" inlineNestedMediaWidth="250"}
+<article class="post photoset">
+<!-- photoset -->
+    <div class="copy">
+        {block:Title}
+            <h2 class="post-title">
+                <a href="{Permalink}">
+                    {Title}
+                </a>
+            </h2>
+        {/block:Title}
+        <!-- post meta -->
+        {% include post-meta.html %}
+        <!-- post content -->
+        <div class="copy-content">
+            {block:Caption}
+            {Caption}
+            {/block:Caption}
+        </div>
+        {PostNotes}
+    </div>
+
+    <div class="media">
+        <figure>
+            {Photoset-700}
+        </figure>
+    </div>
+</article>
+{/block:Photoset}

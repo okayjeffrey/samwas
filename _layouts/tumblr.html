@@ -1,0 +1,95 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {block:Description}
+      <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+    <title>{block:TagPage}{Tag} posts - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title} - {block:Description}{Description}{/block:Description}</title>
+  <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- Icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/apple-touch-icon-precomposed.png">
+      <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico">
+
+  <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+<!-- CSS -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
+  <link rel="stylesheet" href="http://foryo.us/dev/styles.css">
+    <style>
+        iframe#tumblr_controls {
+            top: 1vh !important;
+            left:1vw !important;
+            position: fixed !important;
+        }
+    </style>
+  <!-- Appearance options -->
+    <meta name="text:Names Title" content=""/>
+    <meta name="text:Name First" content=""/>
+    <meta name="text:Name First Link" content=""/>
+    <meta name="text:Name Second" content=""/>
+    <meta name="text:Name Second Link" content=""/>
+    <meta name="if:Show title" content="1">
+    <meta name="if:Show navigation" content="1">
+    <meta name="if:Show Home link" content="0">
+    <meta name="if:Show Archive link" content="1">
+</head>
+
+  <body>
+      <div id="about" class="hide paused">
+          <div class="about container">
+              <div class="about-us">
+                  {block:IfNamesTitle}
+                      <h2>{text:Names Title}</h2>
+                  {/block:IFNamesTitle}
+                  {block:IfNameFirst}
+                      {block:IfNameFirstLink}<a href="{text:Name First Link}" target="_blank">{/block:IfNameFirstLink}<h3>{text:Name First}</h3>{block:IfNameFirstLink}</a>{/block:IfNameFirstLink}
+                  {/block:IfNameFirst}
+                  {block:IfNameSecond}
+                      {block:IfNameSecondLink}<a href="{text:Name Second Link}" target="_blank">{/block:IfNameSecondLink}<h3>{text:Name Second}</h3>{block:IfNameSecondLink}</a>{/block:IfNameSecondLink}
+                  {/block:IfNameSecond}
+              </div>
+              {block:Description}
+              <div class="about-copy">
+                  <p>{Description}</p>
+              </div>
+              {/block:Description}
+          </div>
+          <nav class="container">
+            <ul class="no-style">
+                {block:HasPages}
+                {block:Pages}
+                <li><a href="{URL}">{Label}</a></li>
+                {/block:Pages}
+                <li><a href="/archive">{lang:Archive}</a></li>
+                {/block:HasPages}
+                {block:AskEnabled}
+                <li><a href="/ask">{AskLabel}</a></li>
+                {/block:AskEnabled}
+            </ul>
+          </nav>
+      </div>
+
+    <div class="container content">
+        <header class="masthead">
+            {block:IfShowTitle}
+            <h3 class="masthead-title">
+                <a href="/" title="Home">{Title}</a>
+            </h3>
+            {/block:IfShowTitle}
+            <button title="Main Navigation" id="burgermenu" class="burgermenu paused opacity0">
+              <span></span>
+            </button>
+        </header>
+      <main>
+        {{ content }}
+        {% include tumblr-pagination.html %}
+      </main>
+    </div>
+{% include footer.html %}
+  </body>
+</html>

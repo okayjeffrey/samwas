@@ -1,0 +1,17 @@
+{block:Quote}
+<article class="post quote">
+<!-- Quote -->
+    <div class="copy">
+        <!-- post meta -->
+        {% include post-meta.html %}
+        <!-- post content -->
+        <div class="copy-content">
+            {Quote}
+            {block:Source}
+              <cite>{Source}</cite>
+            {/block:Source}
+        </div>
+        {PostNotes}
+    </div>
+</article>
+{/block:Quote}

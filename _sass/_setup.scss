@@ -98,6 +98,11 @@ $burger-height: 1.25rem;
     -webkit-flex-wrap: $value;
 }
 
+@mixin flex-direction($value) {
+    flex-direction: $value;
+    -webkit-flex-direction: $value;
+}
+
 @mixin align-content($value) {
     align-content: $value;
     -webkit-align-content: $value;
@@ -177,42 +182,4 @@ $burger-height: 1.25rem;
     @-webkit-keyframes #{$name} {
         @content;
     }
-}
-
-// ANIMATIONS!!!!!!!!!!!!!!!!
-
-// -- Hamburger animation
-@include keyframes(topLineCross) {
-  0% { @include transform(translateY(-($burger-height / 2))); }
-  50% { @include transform(translateY(0px)); }
-  100% { @include transform(translateY(0px) rotate(45deg)); }
-}
-
-@include keyframes(bottomLineCross) {
-  0% { @include transform(translateY($burger-height / 2)); }
-  50% { @include transform(translateY(0px)); }
-  100% { @include transform(translateY(0px) rotate(-45deg)); }
-}
-
-@include keyframes(topLineBurger) {
-  0% { @include transform(translateY(0px) rotate(45deg)); }
-  50% { @include transform(rotate(0deg)); }
-  100% { @include transform(translateY(-($burger-height / 2)) rotate(0deg)); }
-}
-
-@include keyframes(bottomLineBurger) {
-  0% { @include transform(translateY(0px) rotate(-45deg)); }
-  50% { @include transform(rotate(0deg)); }
-  100% { @include transform(translateY($burger-height / 2) rotate(0deg)); }
-}
-
-// -- About hide & show
-@include keyframes(aboutShow) {
-  0% { max-height: 2px; }
-  100% { max-height: 2000px; }
-}
-
-@include keyframes(aboutHide) {
-  0% { max-height: 2000px; }
-  100% { max-height: 2px; }
 }
