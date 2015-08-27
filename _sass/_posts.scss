@@ -107,7 +107,7 @@ cite {
 
 }
 
-.post.inspire { // .post.photo
+.post.inspire, .post.interview, .post.life { // .post.photo
     @include flex-wrap(wrap-reverse);
     .copy {
         border: 0;
@@ -131,7 +131,7 @@ cite {
     }
 }
 
-.post.text, .post.chat, .post.interview {
+.post.text, .post.chat {
     .copy {
         max-width: $column-width * 5;
     }
