@@ -1,0 +1,27 @@
+{block:Video inlineMediaWidth="250" inlineNestedMediaWidth="250"}
+<article class="post video {TagsAsClasses}">
+<!-- Video -->
+    <div class="copy">
+        {block:Title}
+            <h2 class="post-title">
+                <a href="{Permalink}">
+                    {Title}
+                </a>
+            </h2>
+        {/block:Title}
+        <!-- post meta -->
+        {% include post-meta.html %}
+        <!-- post content -->
+        <div class="copy-content">
+            {Caption}
+        </div>
+        {PostNotes}
+    </div>
+
+    <div class="media">
+        <div class="videowrap">
+            {VideoEmbed-700}
+        </div>
+    </div>
+</article>
+{/block:Video}

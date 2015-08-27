@@ -1,0 +1,24 @@
+<span>
+    <div class="post-meta">
+        {LikeButton color="grey" size="16"}
+        &nbsp;&nbsp;
+        {ReblogButton color="grey" size="16"}
+        &nbsp;&nbsp;
+        <time datetime="{Month} {DayOfMonth}" class="post-date">{Month} {DayOfMonth}</time>
+        {block:Author}
+        &mdash;
+        <span class="post-author">{Author}</span>
+        {/block:Author} 
+        {block:NoteCount}
+            &mdash;
+             <a class="post-notes" href="{Permalink}">{NoteCountWithLabel}</a>
+        {/block:NoteCount}
+    </div>
+    {block:HasTags}
+        <small class="post-tags">
+            {block:Tags}
+                <a href="{TagURL}" class="tag">{Tag}</a>
+            {/block:Tags}
+        </small>
+    {/block:HasTags}
+</span>

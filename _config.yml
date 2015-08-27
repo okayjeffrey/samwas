@@ -1,13 +1,31 @@
-# Site settings
-title: Samwas
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://samwas.us" # the base hostname & protocol for your site
-twitter_username: samwas
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: true
 
-# Build settings
-markdown: kramdown
+future:      true
+
+markdown: redcarpet
+redcarpet:
+  extensions: ["strikethrough", "lax_spacing"]
+
+# Setup
+title:               SAMWAS
+tagline:             On the Line
+url:                 http://samwas.com
+paginate:            5
+baseurl:             ""
+host: 0.0.0.0
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+name:              Jeffrey Larrimore
+url:               https://twitter.com/okayjeffrey
+email:             me@jeffreylarrimore.com

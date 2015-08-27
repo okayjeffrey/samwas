@@ -1,15 +1,32 @@
 ---
 layout: default
 ---
-<div class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-
-</div>
+<article class="post">
+  <div class="copy">
+      <h2 class="post-title">
+          <a href="{{ site.baseurl }}{{ page.url }}">
+              {{ page.title }}
+          </a>
+      </h2>
+      <div class="post-meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">{{ page.date | date_to_string }}</time>
+          &mdash;
+          <cite>{{ page.author }}</cite>
+      </div>
+      <div class="post-tags">
+          {% for tag in page.tags %}
+              <span class="tag">{{ tag }}</span>
+          {% endfor %}
+      </div>
+      {{ content }}
+  </div>
+  <div class="media">
+      <ul class="no-style">
+      {% for image in page.images %}
+          <li>
+              <img src="{{ image }}" data-src="{{ image }}" title="{{ image }}" />
+          </li>
+      {% endfor %}
+      </ul>
+  </div>
+</article>

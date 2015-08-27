@@ -1,0 +1,185 @@
+// COLOR SETUP
+$key-color: #000; // Body Copy
+$accent-color: #999; // Meta Data & Subtle Accents
+$callout-color: #0092B2; // Links
+$power-color: #FFCA3D; // Top Bar
+$background-color: #F8F8F8; // Background FFFFF7
+
+// TYPE SETUP
+$typeface: franklin-gothic-urw;
+$base-font-size: 1.125rem; // 18px
+$base-line-height: 1.5rem; // 24
+
+$h1-font-size: 4.25rem; // 68px / 120
+$h1-lines: 3; // * 24
+$h1-line-height: ($base-line-height * $h1-lines); // 72
+$h1-margin-top: 1 * $base-line-height; // 24
+$h1-margin-bottom: 1 * $base-line-height; // 24
+
+$h2-font-size: 2.625rem; // 42px / 120
+$h2-lines: 2; // * 24
+$h2-line-height: ($base-line-height * $h2-lines); // 48
+$h2-margin-top: 2 * $base-line-height; // 48
+$h2-margin-bottom: 1 * $base-line-height; // 24
+
+$h3-font-size: 1.6875rem; // 24px / 96
+$h3-lines: 1.5; // * 24
+$h3-line-height: ($base-line-height * $h3-lines); // 36
+$h3-margin-top: 1.5 * $base-line-height; // 36
+$h3-margin-bottom: 1 * $base-line-height; // 24
+
+$h4-font-size: 1.0625rem; // 17px / 48
+$h4-lines: 1; // * 24
+$h4-line-height: ($base-line-height * $h4-lines) ; // 24
+$h4-margin-top: 1 * $base-line-height; // 24
+$h4-margin-bottom: 0 * $base-line-height; // 0
+
+// Layout
+$columns: 12;
+$content-width: 1272;
+$max-width: ($content-width / 16) + 0rem;
+$column-width-px: ($content-width / $columns) + 0px;
+$column-width: ($content-width / $columns) / 16 + 0rem;
+
+// Breakpoints
+$max-break: $max-width; // 1272
+$large-break: 58rem; // 928
+$medium-break: 48rem; // 768
+$small-break: 38rem; // 608
+
+@mixin breakpoint($point) {
+    @if $point == max {
+        @media (min-width: $max-break) { @content; }
+    }
+    @if $point == large {
+        @media (min-width: $large-break) { @content; }
+    }
+    @else if $point == medium {
+        @media (min-width: $medium-break) { @content; }
+    }
+    @else if $point == small {
+        @media (min-width: $small-break) { @content; }
+    }
+}
+
+// RANDOs
+
+$burger-height: 1.25rem;
+
+// MIXINS
+
+// --- Animation
+@mixin transition($value) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -o-transition: $value;
+    transition: $value;
+}
+
+// -- layout
+@mixin transform($value) {
+    transform: $value;
+    -webkit-transform: $value;
+}
+
+// --- Flex Box
+@mixin flex {
+    display: flex;
+    display: -webkit-flex;
+}
+
+@mixin inline-flex {
+    display: inline-flex;
+    display: -webkit-inline-flex;
+}
+
+@mixin flex-wrap($value) {
+    flex-wrap: $value;
+    -webkit-flex-wrap: $value;
+}
+
+@mixin flex-direction($value) {
+    flex-direction: $value;
+    -webkit-flex-direction: $value;
+}
+
+@mixin align-content($value) {
+    align-content: $value;
+    -webkit-align-content: $value;
+}
+
+@mixin align-items($value) {
+    align-items: $value;
+    -webkit-align-items: $value;
+}
+
+@mixin align-self($value) {
+    align-self: $value;
+    -webkit-align-self: $value;
+}
+
+@mixin justify-content($value) {
+    justify-content: $value;
+    -webkit-justify-content: $value;
+}
+
+@mixin order($value) {
+    order: $value;
+    -webkit-order: $value;
+}
+
+// ---- animation
+
+@mixin animation($value) {
+    animation: $value;
+    -webkit-animation: $value;
+}
+
+@mixin animation-name($value) {
+    animation-name: $value;
+    -webkit-animation-name: $value;
+}
+
+@mixin animation-duration($value) {
+    animation-duration: $value;
+    -webkit-animation-duration: $value;
+}
+
+@mixin animation-iteration-count($value) {
+    animation-iteration-count: $value;
+    -webkit-animation-iteration-count: $value;
+}
+
+@mixin animation-direction($value) {
+    animation-direction: $value;
+    -webkit-animation-direction: $value;
+}
+
+@mixin animation-timing-function($value) {
+    animation-timing-function: $value;
+    -webkit-animation-timing-function: $value;
+}
+
+@mixin animation-fill-mode($value) {
+    animation-fill-mode: $value;
+    -webkit-animation-fill-mode: $value;
+}
+
+@mixin animation-delay($value) {
+    animation-delay: $value;
+    -webkit-animation-delay: $value;
+}
+
+@mixin animation-play-state($value) {
+    animation-play-state: $value;
+    -webkit-animation-play-state: $value;
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+}

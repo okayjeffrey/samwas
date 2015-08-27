@@ -1,0 +1,17 @@
+{block:Link}
+<article class="post link {TagsAsClasses}">
+<!-- Link -->
+    <div class="copy">
+        <!-- post meta -->
+        {% include post-meta.html %}
+        <!-- post content -->
+        <div class="copy-content">
+            {block:Description}
+              {Description}
+            {/block:Description}
+            <a class="featured-link" href="{URL}" {Target}>{Name}</a>
+        </div>
+        {PostNotes}
+    </div>
+</article>
+{/block:Link}

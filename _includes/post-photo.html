@@ -1,0 +1,27 @@
+{block:Photo}
+<article class="post photo {TagsAsClasses}">
+    <!-- Photo -->
+    <div class="copy">
+        {block:Title}
+            <h2 class="post-title">
+                <a href="{Permalink}">
+                    {Title}
+                </a>
+            </h2>
+        {/block:Title}
+        <!-- post meta -->
+        {% include post-meta.html %}
+        <!-- post content -->
+        <div class="copy-content">
+            {Caption}
+        </div>
+        {PostNotes}
+    </div>
+    <!-- post media -->
+    <div class="media">
+        <figure>
+            {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">{LinkCloseTag}
+        </figure>
+    </div>
+</article>
+{/block:Photo}

@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   {% include head.html %}
-
-  <body class="bg-teal white m2 border border-3 border-white">
-
-    <!-- {% include header.html %} -->
-
-    <div class="page-content">
-      <div class="wrapper">
+  <body>
+    {% include about-nav.html %}
+    <div class="container content">
+        {% include header.html %}
+      <main>
         {{ content }}
-      </div>
+        {% include pagination.html %}
+      </main>
     </div>
-
-    {% include footer.html %}
-
+{% include footer.html %}
   </body>
-
 </html>

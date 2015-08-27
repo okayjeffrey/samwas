@@ -1,0 +1,21 @@
+{block:Text}
+<article class="post text {TagsAsClasses}">
+<!-- Text -->
+    <div class="copy">
+        {block:Title}
+            <h2 class="post-title">
+                <a href="{Permalink}">
+                    {Title}
+                </a>
+            </h2>
+        {/block:Title}
+        <!-- post meta -->
+        {% include post-meta.html %}
+        <!-- post content -->
+        <div class="copy-content">
+            {Body}
+        </div>
+        {PostNotes}
+    </div>
+</article>
+{/block:Text}
