@@ -15,7 +15,7 @@ title:               SAMWAS
 tagline:             On the Line
 url:                 http://jeffreylarrimore.com/samwas/
 paginate:            5
-baseurl:             "/samwas/"
+baseurl:             "/samwas"
 host: 0.0.0.0
 
 # Assets
