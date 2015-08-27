@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Style
+permalink: /
 ---
 
 # Bail ledge 900 melancholy face plant fakie out. Mongo skate key launch ramp airwalk Chris Livingston hang-up hang up.
