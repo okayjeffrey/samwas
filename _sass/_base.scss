@@ -75,23 +75,20 @@ tbody tr:nth-child(odd) th {
   background-color: lighten($accent-color, 48%);
 }
 
-.videowrap {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
-
-    iframe {
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-   }
+.videowrap, .tmblr-embed{
+    @include flex;
+    padding-bottom: 1rem;
 }
 
 ul.no-style {
     list-style: none;
     margin: 0;
     padding: 0;
+    li::before, li::after {
+        content:'';
+    }
+}
+
+figure {
+    margin: 0;
 }

@@ -1,0 +1,23 @@
+{block:Chat}
+<article class="post chat {TagsAsClasses}">
+<!-- Chat -->
+    <div class="copy">
+        {block:Title}
+            <h2 class="post-title">
+                <a href="{Permalink}">{Title}</a>
+            </h2>
+        {/block:Title}
+        <!-- post meta -->
+        {% include post-meta.html %}
+        <!-- post content -->
+        <div class="copy-content">
+            <ol class="chat-log">
+              {block:Lines}
+                <li>{block:Label}<span class="chat-log__label">{Label}</span> {/block:Label}{Line}</li>
+              {/block:Lines}
+          </ol>
+        </div>
+        {PostNotes}
+    </div>
+</article>
+{/block:Chat}
