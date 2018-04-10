@@ -1,0 +1,309 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="p:domain_verify" content="4904bc9ed9467d78795b2649fb535c2d"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {block:Description}
+      <meta name="description" content="{MetaDescription}">
+    {/block:Description}
+    <title>{block:TagPage}{Tag} posts - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title} - {block:Description}{Description}{/block:Description}</title>
+  <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+
+      <!-- Typekit -->
+       <script src="//use.typekit.net/vzr8ngw.js"></script>
+       <script>try{Typekit.load();}catch(e){}</script>
+
+  <!-- Icons -->
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+      <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+<!-- CSS -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css">
+  <link rel="stylesheet" href="http://jeffreylarrimore.com/samwas/styles.css">
+    <style>
+        iframe#tumblr_controls {
+            top: 1vh !important;
+            left:1vw !important;
+            position: fixed !important;
+        }
+    </style>
+  <!-- Appearance options -->
+    <meta name="text:Names Title" content="Who we are"/>
+    <meta name="text:Name First" content="Michelle Nguyen"/>
+    <meta name="text:Name First Link" content="http://michellemeng.com"/>
+    <meta name="text:Name Second" content="Jeffrey Larrimore"/>
+    <meta name="text:Name Second Link" content="http://jeffreylarrimore.com"/>
+    <meta name="if:Show title" content="0">
+    <meta name="if:Show navigation" content="1">
+    <meta name="if:Show Home link" content="0">
+    <meta name="if:Show Archive link" content="1">
+</head>
+
+  <body>
+      <div id="about" class="hide paused">
+          <div class="about container">
+              <div class="about-us">
+                  {block:IfNamesTitle}
+                      <h2>{text:Names Title}</h2>
+                  {/block:IFNamesTitle}
+                  {block:IfNameFirst}
+                      {block:IfNameFirstLink}<a href="{text:Name First Link}" target="_blank">{/block:IfNameFirstLink}<h3>{text:Name First}</h3>{block:IfNameFirstLink}</a>{/block:IfNameFirstLink}
+                  {/block:IfNameFirst}
+                  {block:IfNameSecond}
+                      {block:IfNameSecondLink}<a href="{text:Name Second Link}" target="_blank">{/block:IfNameSecondLink}<h3>{text:Name Second}</h3>{block:IfNameSecondLink}</a>{/block:IfNameSecondLink}
+                  {/block:IfNameSecond}
+              </div>
+              {block:Description}
+              <div class="about-copy">
+                  <p>{Description}</p>
+              </div>
+              {/block:Description}
+          </div>
+          <nav class="container">
+            <ul class="no-style">
+                {block:HasPages}
+                {block:Pages}
+                <li><a href="{URL}">{Label}</a></li>
+                {/block:Pages}
+                <li><a href="/archive">{lang:Archive}</a></li>
+                {/block:HasPages}
+                {block:AskEnabled}
+                <li><a href="/ask">{AskLabel}</a></li>
+                {/block:AskEnabled}
+            </ul>
+          </nav>
+      </div>
+
+    <div class="container content">
+        <header class="masthead">
+            {block:IfShowTitle}
+            <h3 class="masthead-title">
+                <a href="/" title="Home">{Title}</a>
+            </h3>
+            {/block:IfShowTitle}
+            <button title="Main Navigation" id="burgermenu" class="burgermenu paused opacity0">
+              <span></span>
+            </button>
+        </header>
+      <main>
+
+<!-- SHOPIFY CODE---------------------->
+<div id="collection-component-8a540f1b398"></div>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'samwas.myshopify.com',
+      apiKey: 'dfe3b6a1ce5e80371ac34fafcad0d575',
+      appId: '6',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('collection', {
+        id: 358507659,
+        node: document.getElementById('collection-component-8a540f1b398'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "buttonDestination": "modal",
+    "variantId": "all",
+    "contents": {
+      "imgWithCarousel": false,
+      "variantTitle": false,
+      "options": false,
+      "description": false,
+      "buttonWithQuantity": false,
+      "quantity": false
+    },
+    "text": {
+      "button": "VIEW PRODUCT"
+    },
+    "styles": {
+      "product": {
+        "text-align": "left",
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "button": {
+        "background-color": "#0092b2",
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px",
+        ":hover": {
+          "background-color": "#0083a0"
+        },
+        "border-radius": "0px",
+        ":focus": {
+          "background-color": "#0083a0"
+        }
+      },
+      "title": {
+        "font-size": "20px"
+      },
+      "quantityInput": {
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px"
+      }
+    }
+  },
+  "cart": {
+    "contents": {
+      "button": true
+    },
+    "styles": {
+      "button": {
+        "background-color": "#0092b2",
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px",
+        ":hover": {
+          "background-color": "#0083a0"
+        },
+        "border-radius": "0px",
+        ":focus": {
+          "background-color": "#0083a0"
+        }
+      },
+      "footer": {
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "variantTitle": false,
+      "buttonWithQuantity": true,
+      "button": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "background-color": "#0092b2",
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px",
+        ":hover": {
+          "background-color": "#0083a0"
+        },
+        "border-radius": "0px",
+        ":focus": {
+          "background-color": "#0083a0"
+        }
+      },
+      "quantityInput": {
+        "font-size": "13px",
+        "padding-top": "14.5px",
+        "padding-bottom": "14.5px"
+      }
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "background-color": "#0092b2",
+        ":hover": {
+          "background-color": "#0083a0"
+        },
+        ":focus": {
+          "background-color": "#0083a0"
+        }
+      },
+      "count": {
+        "font-size": "13px"
+      }
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  }
+}
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+<!-- SHOPIFY CODE-------------------- END -->
+
+      </main>
+    </div>
+ <script>
+       (function() {
+           opened = false;
+           var btn = document.getElementById('burgermenu');
+           btn.addEventListener('click', onBtnClick);
+           btn.classList.remove("opacity0");
+
+           function onBtnClick(e) {
+                this.classList.remove("paused");
+                this.classList.toggle('opened');
+                showHide();
+           }
+           function showHide(){
+                var about = document.querySelector('#about');
+                about.classList.remove("paused");
+                about.classList.toggle('show');
+                about.classList.toggle('hide');
+           }
+       })();
+   </script>
+
+   <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-3908806-5', 'auto');
+     ga('send', 'pageview');
+
+   </script>
+
+  </body>
+</html>
